@@ -1,8 +1,6 @@
-%h1.page-header Spotify-Voter
 = form_tag tracks_path, method: "get", html: { class: "form" } do
   .form-group.col-xs-4
     = text_field_tag(:tracks_name, "", placeholder: "Suche nach einem Track", class: "form-control" )
   = submit_tag "Search", class: "btn btn-primary"
-
-= link_to 'Sign in with Spotify', '/auth/spotify'
-
+- unless current_user
+  = link_to 'Sign in with Spotify', '/auth/spotify'

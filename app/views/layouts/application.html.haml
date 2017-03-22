@@ -7,4 +7,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %nav{class: 'navbar navbar-default',role: 'navigation'}
+      .container-fluid
+        .navbar-header
+          = link_to "Spotify voter", root_path, class: "navbar-brand"
+          -# %a{class: 'navbar-brand', href:'#'} Spotify voter
+          - if current_user
+            %p{class: 'navbar-text navbar-right'} Signed in as #{current_user.name}
+
+    .container
+      = yield
