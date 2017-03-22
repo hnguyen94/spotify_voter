@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tracks/', to: 'tracks#index'
+
   get 'home/index'
   root 'home#index'
 
