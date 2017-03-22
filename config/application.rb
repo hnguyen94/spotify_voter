@@ -25,6 +25,7 @@ module SpotifyVoter
     config.generators do |g|
     # .. other configuration ..
       g.javascript_engine :js
+      g.template_engine :haml
     end
   end
 end
