@@ -1,2 +1,9 @@
-%h1 Tracks#index
-%p Find me in app/views/tracks/index.html.haml
+%h1.page-header
+  Tracks Matching #{params[:tracks_name]}
+
+%ul
+  - @tracks.each do |track|
+    %li
+      %iframe{ :src => "https://embed.spotify.com/?uri=spotify:track:#{track.id}",
+                :frameborder => 0,
+                :allowtransparency => true}
