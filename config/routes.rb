@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  get 'tracks/', to: 'tracks#index'
+
+  get '/user/:user_id/playlists' => 'playlists#index'
+  get '/user/:user_id/playlists/:playlist_id' => 'playlists#show'
+
+  get 'tracks/' => 'tracks#index'
 
   get 'home/index'
   root 'home#index'
+
+
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/auth/failure' => 'sessions#failure'

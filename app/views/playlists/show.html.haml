@@ -1,0 +1,7 @@
+%h1.page-header
+  = @playlist.name
+%ul
+  - @playlist.tracks.each do |track |
+    %li
+      = track.name
+      | 
