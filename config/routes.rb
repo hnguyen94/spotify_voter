@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/user/:user_id/playlists/:playlist_id' => 'playlists#show'
 
   get 'tracks/' => 'tracks#index'
+  post 'tracks/:track_id' => 'tracks#create'
 
   get 'home/index'
   root 'home#index'

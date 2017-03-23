@@ -4,8 +4,10 @@
 %ul
   - @tracks.each do |track|
     %li
-      =track.id
-      |
       %iframe{ :src => "https://embed.spotify.com/?uri=spotify:track:#{track.id}",
                 :frameborder => 0,
                 :allowtransparency => true}
+      |
+      = form_tag "tracks/#{track.id}", method: "post", html: { class: "form"} do
+        =submit_tag "Add Track", class: "btn btn-primary"
+
