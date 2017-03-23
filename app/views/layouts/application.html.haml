@@ -13,7 +13,7 @@
           = link_to "Spotify voter", root_path, class: "navbar-brand"
           -# %a{class: 'navbar-brand', href:'#'} Spotify voter
           - if current_user
-            %p{class: 'navbar-text navbar-right'} Signed in as #{current_user.name}
+            %p{class: 'navbar-text navbar-right'} Signed in as #{current_user.name.nil? ? current_user.uid : current_user.name}
 
     .container
       = yield
