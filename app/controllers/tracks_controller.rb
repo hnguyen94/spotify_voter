@@ -8,6 +8,12 @@ class TracksController < ApplicationController
   end
 
 
+  def update
+    @track_to_edit = Track.find_by(spotify_id: params[:track_id])
+    Track.update(@track_to_edit.spotify_id, :votings => 1)
+  end
+
+
   def create
     @track = RSpotify::Track.find(params[:track_id])
     @track_to_add = Track.new({ :spotify_id => @track.id,

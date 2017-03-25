@@ -8,6 +8,6 @@
                 :frameborder => 0,
                 :allowtransparency => true}
       |
-      = form_tag "tracks/#{track.id}", method: "post", html: { class: "form"} do
+      = form_tag "tracks/?track_id=#{track.id}", method: "post", html: { class: "form"} do
         =submit_tag "Add Track", class: "btn btn-primary"
 

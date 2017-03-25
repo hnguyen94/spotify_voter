@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   get '/user/:user_id/playlists' => 'playlists#index'
-  get '/user/:user_id/playlists/:playlist_id' => 'playlists#show'
+  get '/party-playlist' => 'playlists#show'
 
   get 'tracks/' => 'tracks#index'
-  post 'tracks/:track_id' => 'tracks#create'
+  put 'tracks/:id' => 'tracks#update'
+  post 'tracks/' => 'tracks#create'
 
   get 'home/index'
   root 'home#index'

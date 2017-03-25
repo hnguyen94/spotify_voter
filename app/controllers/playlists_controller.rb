@@ -3,6 +3,6 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = RSpotify::Playlist.find('mibr7','5V2YrcPuEPxVPdI0QDoLJx')
+    @playlist = RSpotify::Playlist.find(ENV['playlist_user'],ENV['playlist_id'])
   end
 end

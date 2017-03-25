@@ -1,9 +1,11 @@
 %h1.page-header
   = @playlist.name
-%ul
+%ul.list-group
   - @playlist.tracks.each do |track |
-    %li
+    %li.list-group-item
       = track.name
       |
-      %span{ :class => "glyphicon glyphicon-star-empty"}
-      //glyphicon glyphicon-star
+      %span{ :class => "glyphicon glyphicon-star-empty",
+             :name => track.id}
+
+
