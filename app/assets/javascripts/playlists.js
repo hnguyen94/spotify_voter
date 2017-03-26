@@ -10,7 +10,8 @@ document.querySelector('.list-group').addEventListener('click', function(e){
                     console.log(element.getAttribute('name'))
                 }
             };
-            xhttp.open('PUT', '/tracks/2B3FCVxi308OK2z8suLD7r?track_id=2B3FCVxi308OK2z8suLD7r', true);
+            xhttp.open('PUT', '/tracks/2B3FCVxi308OK2z8suLD7r', true);
+            xhttp.setRequestHeader('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').getAttribute('content'))
             xhttp.send();
         }
     })
