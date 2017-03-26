@@ -9,8 +9,9 @@ class TracksController < ApplicationController
 
 
   def update
-    @track_to_edit = Track.find_by(spotify_id: params[:track_id])
-    Track.update(@track_to_edit.spotify_id, :votings => 1)
+    @track_to_edit = Track.find_by(spotify_id: params[:id])
+    @track_to_edit.votings = @track_to_edit.votings + 1
+    @track_to_edit.save
   end
 
 
