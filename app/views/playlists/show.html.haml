@@ -2,10 +2,10 @@
   = @playlist.name
 %ul.list-group
   - @playlist.tracks.each do |track |
-    %li.list-group-item
+    %li{:class => 'list-group-item', :id => track.id}
       = track.name
       |
       %span{ :class => "glyphicon glyphicon-star-empty",
-             :name => track.id}
+             :id => track.id}
 
 
