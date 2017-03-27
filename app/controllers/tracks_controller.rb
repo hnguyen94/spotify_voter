@@ -12,6 +12,9 @@ class TracksController < ApplicationController
     @track_to_edit = Track.find_by(spotify_id: params[:id])
     @track_to_edit.votings = @track_to_edit.votings + 1
     @track_to_edit.save
+
+    @tracks_ordered = Track.order_by(:votings => :desc)
+    render json: @tracks_ordered
   end
 
 
@@ -25,6 +28,7 @@ class TracksController < ApplicationController
       redirect_to root_path, notice: "Track was added!"
     end
   end
+
 
 
 end
