@@ -2,17 +2,17 @@
 // All this logic will automatically be available in application.js.
 
 document.querySelector('.list-group').addEventListener('click', function(e){
-    document.querySelectorAll('.list-group .list-group-item span').forEach(function(element){
+    document.querySelectorAll('.list-group .list-group-item .glyphicon').forEach(function(element){
         if(e.target === element){
+            console.log("click")
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     response = JSON.parse(xhttp.responseText)
-                    console.log("Test")
-                    reorderTracksBy(response)
+                    console.log('test')
                 }
             };
-            xhttp.open('PUT', '/tracks/' + element.id, true);
+            xhttp.open('PUT', '/tracks/' + element.parentElement.id, true);
             xhttp.setRequestHeader('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').getAttribute('content'))
             xhttp.send();
         }
@@ -20,14 +20,5 @@ document.querySelector('.list-group').addEventListener('click', function(e){
 })
 
 
-function reorderTracksBy(reorderedTracks){
-    counter = 0
-    ulLi = document.querySelector('.list-group').childNodes
-    reorderedTracks.forEach(function(track){
-       liEl =  ulLi[counter]
-
-
-    })
-}
 
 
