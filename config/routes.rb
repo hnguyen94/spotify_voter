@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get '/user/:user_id/playlists' => 'playlists#index'
-  get '/party-playlist' => 'playlists#show'
+
+  get '/playlist' => 'playlists#show'
 
   get 'tracks/' => 'tracks#index'
   put 'tracks/:id' => 'tracks#update'

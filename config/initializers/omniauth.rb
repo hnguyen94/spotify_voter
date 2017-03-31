@@ -1,5 +1,5 @@
 require 'rspotify/oauth'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :spotify, ENV['client_id'], ENV['secret_id'], scope: 'user-read-email playlist-modify-private playlist-modify-public user-library-read user-library-modify'
+  provider :spotify, ENV['client_id'], ENV['secret_id'], scope: 'user-read-private playlist-modify-private playlist-modify-public user-library-read user-library-modify'
 end
