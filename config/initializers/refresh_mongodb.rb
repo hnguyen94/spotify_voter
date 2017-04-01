@@ -5,6 +5,7 @@ playlist.tracks.each do |track|
   puts track.name
   track_to_add = Track.new({ :spotify_id => track.id,
                     :name => track.name,
+                             :is_last_played => false,
                     :votings => 0,
                     :played_times => 0 })
   track_to_add.save

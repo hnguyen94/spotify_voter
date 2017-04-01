@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   get '/playlist' => 'playlists#show'
 
+
   get 'tracks/' => 'tracks#index'
   put 'tracks/:id' => 'tracks#update'
   post 'tracks/' => 'tracks#create'
+  put 'check-last-track' => 'tracks#check_last_played_track'
+
 
   get 'home/index'
   root 'home#index'
